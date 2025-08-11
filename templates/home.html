@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>FWI Prediction</title>
+  <style>
+    body { font-family: Arial, sans-serif; max-width: 600px; margin: 2em auto; }
+    label { display: block; margin-top: 1em; }
+    input { width: 100%; padding: 0.5em; margin-top: 0.2em; }
+    button { margin-top: 1.5em; padding: 0.7em 1.5em; font-size: 1em; }
+  </style>
+</head>
+<body>
+  <h2>Enter Features for Prediction</h2>
+  <form action="{{ url_for('predict_data')}}" method="post">
+    <label>Temperature:
+      <input type="text" name="Temperature" required />
+    </label>
+
+    <label>RH:
+      <input type="text" name="RH" required />
+    </label>
+
+    <label>Ws:
+      <input type="text" name="Ws" required />
+    </label>
+
+    <label>Rain:
+      <input type="text" name="Rain" required />
+    </label>
+
+    <label>FFMC:
+      <input type="text" name="FFMC" required />
+    </label>
+
+    <label>DMC:
+      <input type="text" name="DMC" required />
+    </label>
+
+    <label>ISI:
+      <input type="text" name="ISI" required />
+    </label>
+
+    <label>Classes:
+      <input type="text" name="Classes" required />
+    </label>
+
+    <label>Region:
+      <input type="text" name="Region" required />
+    </label>
+
+    <button type="submit">Predict</button>
+  </form>
+  <h2>
+  The FWI prediction is {{prediction_text}}
+  </h2>
+
+</body>
+</html>
